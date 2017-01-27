@@ -1,0 +1,26 @@
+<div class="row">
+        <div class="col-lg-1 col-md-1 col-sm-1"></div>
+        <div class="container col-lg-2 col-md-2 col-sm-2 myheaderleft headercolor" >
+            <br>
+            <font size="5"><a style="color:#ffffff;" href="{% url 'noauto' %}">Ask the question</a></font>
+        </div>
+        <div  class="col-lg-4 col-md-4 col-sm-4 headercolor">
+            <br>
+            <input type="text" class="form-control" placeholder="Search for tags">
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1 headercolor">
+            <br>
+            <a href="#" class="btn btn-primary btn-md active" role="button">Find!</a>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 myheaderight headercolor row container">
+            <br>
+            <div class="col-sm-8">
+                <font size="3"><a style="color:#ffffff;" href="{% url 'registr' %}/?next={{request.get_full_path}}">Create new account</a></font>
+            </div>
+            <div class="col-sm-4">
+                <font size="3"><a style="color:#ffffff;" href="{%url 'signup' %}/?next={{request.get_full_path}}">Log in</a></font>
+            </div>
+
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1"></div>
+    </div>

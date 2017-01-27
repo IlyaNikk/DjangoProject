@@ -1,0 +1,35 @@
+    <br>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+        <nav>
+            <ul class="pagination">
+                {% if contacts.has_previous %}
+                     <li>
+                    <a href="?page={{ contacts.previous_page_number }}{%if tag %}&tag={{tag}} {% endif %}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                {% endif %}
+                {% for page in pages %}
+                    {% if page != current %}
+                    <li><a href="?page={{ page }}{% if tag %}&tag={{tag}} {% endif %}">{{ page }}</a>
+                    </li>
+                    {% endif %}
+                    {% if page == current %}
+                    <li class="active"><a href="?page={{ page }}{%if tag %}&tag={{tag}} {% endif %}">{{ page }}</a>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+                {% if contacts.has_next %}
+                <li>
+                    <a href="?page={{ contacts.next_page_number }}&{%if tag %}tag={{tag}} {% endif %}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>

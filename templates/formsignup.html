@@ -1,0 +1,32 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+    <font size="7" align="left">Sign Up</font>
+    <form action="/signup" method="POST">
+        {% csrf_token %}
+        {% if login_error %}
+            <h3 style="color: red;">Invalid Login/password</h3>
+        {% endif %}
+        {% for form in form.visible_fields %}
+        <div class="form-group">
+            <label {% if form.errors %} style = "color: red" {% endif %} for="{{ form.id_for_label }}"> {{ form.label }} </label>
+            {{ form }}
+        </div>
+        {% endfor %}
+         {% for field in form.hidden_fields %}
+                      {{ field }}
+                    {% endfor %}
+        <div class="row">
+            <div class="col-lg-3">
+                <button type="submit" class="btn btn-default">Log In</button>
+            </div>
+            <div class="col-lg-3">
+                <a href="{% url 'registr' %}" class="btn btn-default" role="button">Create new account</a>
+            </div>
+<!--            <div class="col-lg-3">
+                <button type="submit" class="btn btn-default">Remind Password</button>
+            </div> -->
+            <div class="col-lg-7"></div>
+        </div>
+    </form>
+{% endblock %}

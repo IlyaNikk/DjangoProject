@@ -1,0 +1,28 @@
+
+from django.shortcuts import render
+
+# Create your views here.
+
+from django.http import HttpResponse
+from pprint import pformat
+from cgi import parse_qsl, escape
+
+
+def application(request):
+
+	method = request.method
+ 
+        data = ['<p>Hello world</p>\n']
+
+        if method  == 'POST':
+                for key in requset.POST.key()
+			data = '<p>' + key + '=' + request.POST.get(key) + ',/p>' 
+
+        if method  == 'GET':
+               data.append('Get data\n')
+               for ch in d:
+                        data.append(' = '.join(ch))
+                        data.append('\n')
+
+        return HttpResponse(data)
+

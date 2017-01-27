@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+{% block header %}
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="favicon.ico">
+
+        <title>Ask the question</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="/MyCSS.css" rel="stylesheet">
+
+        <link href="/css/bootstrap.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="/starter-template.css" rel="stylesheet">
+
+       <!-- <script src="/js/ie-emulation-modes-warning.js"></script> -->
+    </head>
+
+{% endblock %}
+<body>
+
+{% if user.is_authenticated %}
+    {% include 'auto.html' %}
+{% else %}
+    {% include 'noauto.html' %}
+{% endif %}
+
+{% block mainblock %}
+    <div class="container row">
+
+        <div class="col-lg-1 col-md-1 col-sm-1">
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-7">
+
+                {% block content %}{% endblock %}
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            {% endblock %}
+            {% block tags %}
+            <div class="populartags row">
+                <div class="col-lg-12" >
+                    <p class="populartags" >
+                            <pre class="tags"><h3 class="h33">Popular tags</h3><a href=" {%url 'tag_search'%}/?tag=perl " id="perl">perl</a>  <a href=" {%url 'tag_search'%}/?tag=Python" id="Python">Python</a>  <a href="{%url 'tag_search'%}/?tag_id=55" id="Tp">Technopark</a>
+<a href="{%url 'tag_search'%}/?tag=MySQL " id="MySql">MySQL</a>  <a href="{%url 'tag_search'%}/?tag=Django " id="Django">Django</a>
+<a href="{%url 'tag_search'%}/?tag=Mail.ru " id="mail">Mail.ru</a>  <a href="{%url 'tag_search'%}/?tag=Voloshin" id="Vol">Voloshin</a>  <a href="{%url 'tag_search'%}/?tag=Chrome" id="Chrome">Chrome</a>
+                        <h3 class="h33">Best Members</h3></pre>
+                    <ul class="spisok">
+                        <li><a href="{% url 'noauto' %}">Mr. Freeman</a></li>
+                        <li><a href="{% url 'noauto' %}">Dr. House</a></li>
+                        <li><a href="{% url 'noauto' %}">Bender</a></li>
+                        <li><a href="{% url 'noauto' %}">Queen Victoria</a></li>
+                        <li><a href="{% url 'noauto' %}">V. Pupkin</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1 col-md-1">
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+<script>window.jQuery || document.write('<script src="/bootstrap-3.3.6/js/tests/vendor/jquery.min.js"><\/script>')</script>
+<script src="/js/bootstrap.min.js"></script>
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+.myheaderleft{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 20px;
+}
+.myheaderight{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 0;
+}
+
+.headercolor{
+    background: #58ACFA;
+    color: white;
+    link: white;
+    height:80px;
+}
+
+div.ratingred:hover {
+    background: red; /* Цвет фона под ссылкой */
+    color: red; /* Цвет ссылки */
+}
+
+a.ratinggreen:hover {
+    background: green; /* Цвет фона под ссылкой */
+    color: green; /* Цвет ссылки */
+}
+
+.like{
+    background-color: green;
+    height: 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 5px;
+}
+
+.dislike{
+    background-color: red;
+    height: 20px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 0;
+}
+
+.populartags{
+    float : left;
+}
+
+.popsize{
+    width: 75px ;
+}
+ .popclaer{
+     clear : both;
+ }
+
+pre.tags{
+    border:none;
+    background-color:#FFFFFF;
+ }
+
+.spisok{
+    font-size: 18px;
+    font-family: Arial;
+}
+
+.h33{
+    font-size: 35px;
+    font-family : Arial;
+}
+
+#perl{
+    color : Red;
+    font-size: 20px;
+}
+
+#Python{
+    font-size: 18px;
+}
+
+#Tp{
+    font-size: 22px;
+    color: black;
+}
+#Django{
+    font-size: 20px;
+    color: green;
+}
+
+#MySql{
+    font-size: 19px;
+}
+
+#mail{
+    font-size: 22px;
+    color: Blue;
+}
+
+#Vol{
+    font-size: 18px;
+    color: #122b40;
+}
+
+#Chrome{
+    font-size: 20px;
+}
+

@@ -1,0 +1,44 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+    <font size="7" align="left">Questions</font>
+    {% if user.is_authenticated %}
+        <h3><a href = "{%url 'new_question'%}" > Ask New Question</a></h3>
+    {% endif %}
+    {%for contact in contacts %}
+         <div class="row" style="border-style: dotted dotted dotted dotted">
+                    <div class="col-lg-4">
+                        <div class="row">
+                            <div class="col-lg-10 row">
+                                <div class="col-lg-12"><br>
+                                    <div style="margin-left:45px" ><a href="{% url 'noauto' %}">{{contact.profile.username}}</a></div>
+                                    <img style="margin-left:15px" src="http://lorempixel.com/125/125" width="125" height="125" class="img-thumbnail">
+                                    <p></p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-1"></div>
+                                    <a href="{% url 'noauto' %}" role="button"><div class="col-lg-3 like" style="color :white" align="center"><span class="glyphicon glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></div></a>
+                                    <div class="col-lg-4" text-align="center">{{contact.question_rank}}</div>
+                                    <a href="{% url 'noauto' %}" role="button"><div class="col-lg-3 dislike" style="color :white" align="center"><span class="glyphicon glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></div></a>
+                                    <div class="col-lg-1"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-8">
+                        <h3><a href="{% url 'question_answer'%}/?id={{contact.id}}"><strong>{{contact.question_title}} </strong></a></h3>
+                        <p> {{contact.question_text}}</p>
+                        <h6>Tags:{%for tag in contact.question_tag.all%} <a href="{%url 'tag_search'%}/?tag={{tag.tag_question}}"> {{tag}} </a> {%endfor%}</h6>
+                        <br>
+                        <h6> Answers : {{contact.question_num_answers}}</h6>
+
+                    </div>
+         </div>
+         <br>
+    {% endfor %}
+{% include 'pagination.html' %}
+{% endblock %}
+
+
+

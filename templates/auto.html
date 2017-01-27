@@ -1,0 +1,32 @@
+    <div class="row">
+        <div class="col-lg-1 col-md-1 col-sm-1"></div>
+        <div class="container col-lg-2 col-md-2 col-sm-2 myheaderleft headercolor" >
+            <br>
+            <font size="5"><a style="color:#ffffff;" href="{% url 'noauto' %}">Ask the question</a></font>
+        </div>
+        <div  class="col-lg-4 col-md-4 col-sm-4 headercolor">
+            <br>
+            <input type="text" class="form-control" placeholder="Search for tags">
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1 headercolor">
+            <br>
+            <a href="#" class="btn btn-primary btn-md active" role="button">Find!</a>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1 headercolor ">
+            <img src="/avatarka.jpg" width="60" height="60" class="img-thumbnail" style="margin-bottom: 5px; margin-top: 5px;">
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 myheaderight headercolor row">
+            <br>
+            <font size="5" > <em> {{user.username}} </em> </font>
+            <br>
+            <ins class="col-sm-6">
+                <a class="text-left" href="{% url 'noauto' %}">Profile</a>
+            </ins>
+            <ins class="col-sm-6">
+                <a class="text-right" href="{% url 'logout' %}">Logout</a>
+            </ins >
+            <br>
+
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1"></div>
+    </div>
